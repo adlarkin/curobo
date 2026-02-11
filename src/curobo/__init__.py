@@ -51,17 +51,21 @@ def _get_version():
 
     root = pathlib.Path(__file__).resolve().parent.parent.parent
     if (root / ".git").exists() and not (root / ".git/shallow").exists():
-        # Third Party
-        import setuptools_scm
+        try:
+            # Third Party
+            import setuptools_scm
 
-        # See the `setuptools_scm` documentation for the description of the schemes used below.
-        # https://pypi.org/project/setuptools-scm/
-        # NOTE: If these values are updated, they need to be also updated in `pyproject.toml`.
-        return setuptools_scm.get_version(
-            root=root,
-            version_scheme="no-guess-dev",
-            local_scheme="dirty-tag",
-        )
+            # See the `setuptools_scm` documentation for the description of the schemes used below.
+            # https://pypi.org/project/setuptools-scm/
+            # NOTE: If these values are updated, they need to be also updated in `pyproject.toml`.
+            return setuptools_scm.get_version(
+                root=root,
+                version_scheme="no-guess-dev",
+                local_scheme="dirty-tag",
+            )
+        except:
+            # Fallback to a hardcoded string if setuptools_scm is missing
+            return "0.7.7-custom"
     else:  # Get the version from the _version.py setuptools_scm file.
         try:
             # Standard Library
