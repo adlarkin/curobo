@@ -6,6 +6,14 @@
 # distribution of this software and related documentation without an express
 # license agreement from NVIDIA CORPORATION is strictly prohibited.
 
+[project]
+name = "curobo"
+dynamic = ["version", "description", "readme", "authors", "dependencies", "optional-dependencies", "classifiers"]
+
+[tool.setuptools.dynamic]
+version = {attr = "curobo.__version__"}
+# We leave the others in 'dynamic' so setuptools pulls them from setup.py
+
 [build-system]
 requires = ["setuptools>=45", "setuptools_scm>=6.2", "wheel", "torch"]
 
