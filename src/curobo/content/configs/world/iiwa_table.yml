@@ -1,0 +1,25 @@
+##
+## Copyright (c) 2023 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+##
+## NVIDIA CORPORATION, its affiliates and licensors retain all intellectual
+## property and proprietary rights in and to this material, related
+## documentation and any modifications thereto. Any use, reproduction,
+## disclosure or distribution of this material and related documentation
+## without an express license agreement from NVIDIA CORPORATION or
+## its affiliates is strictly prohibited.
+##
+cuboid:
+  robot_table:
+    dims: [0.61, 0.9125, 0.59] # x, y, z
+    pose: [0.0, 0.0, 0.295, 1., 0., 0., 0.] # x, y, z, qw, qx, qy, qz
+    color: [0.8, 0.4, 0.2, 1.0] # r, g, b, a
+    friction: 0.2
+    density: 2000.0  # g/m^3
+    restitution: 0.0
+  object_table:
+    dims: [1.0, 2.0, 0.71] # x, y, z
+    pose: [0.805, 0.0, 0.355, 1.0, 0., 0., 0.] # x, y, z, qw, qx, qy, qz
+    color: [0.6, 0.4, 0.23, 1.0] # r, g, b, a
+    friction: 0.2
+    density: 2000.0  # g/m^3
+    restitution: 0.0

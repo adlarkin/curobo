@@ -1,0 +1,127 @@
+##
+## Copyright (c) 2023 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+##
+## NVIDIA CORPORATION, its affiliates and licensors retain all intellectual
+## property and proprietary rights in and to this material, related
+## documentation and any modifications thereto. Any use, reproduction,
+## disclosure or distribution of this material and related documentation
+## without an express license agreement from NVIDIA CORPORATION or
+## its affiliates is strictly prohibited.
+##
+
+collision_spheres:
+    world:
+        - "center": [0.0, 0.0, 0.0]
+          "radius": 0.001
+    right_lbr_link_0:
+        - "center": [0.0, 0.0, 0.11]
+          "radius": 0.105
+    right_lbr_link_1:
+        - "center": [0.0, -0.04, 0.2]
+          "radius": 0.08
+    right_lbr_link_2:
+        - "center": [0.0, 0.07, 0.0]
+          "radius": 0.075
+    right_lbr_link_3:
+        - "center": [0.0, 0.0, 0.0]
+          "radius": 0.08
+        - "center": [0.0, 0.045, 0.18]
+          "radius": 0.07
+    right_lbr_link_4:
+        - "center": [0.0, -0.06, 0.01]
+          "radius": 0.07
+    right_lbr_link_5:
+        - "center": [0.0, 0.0, 0.0]
+          "radius": 0.07
+    right_lbr_link_6:
+        - "center": [0.0, 0.03, 0.0]
+          "radius": 0.058
+        - "center": [0.0, 0.08, -0.02]
+          "radius": 0.063
+    right_lbr_link_7:
+        - "center": [0.0, 0.0, 0.01]
+          "radius": 0.045
+    right_robotiq_to_lbr_mount: 
+        - "center": [0.0, 0.0, 0.03]
+          "radius": 0.035
+    right_robotiq_link: 
+        - "center": [0.0, 0.04, 0.07]
+          "radius": 0.027
+        - "center": [0.0, -0.04, 0.07]
+          "radius": 0.027
+        - "center": [0.0, 0.07, 0.11]
+          "radius": 0.025
+        - "center": [0.0, -0.07, 0.11]
+          "radius": 0.025
+        - "center": [0.0, 0.09, 0.13]
+          "radius": 0.013
+        - "center": [0.0, -0.09, 0.13]
+          "radius": 0.013
+        - "center": [0.0, 0.07, 0.15]
+          "radius": 0.015
+        - "center": [0.0, -0.07, 0.15]
+          "radius": 0.015
+        - "center": [0.0, 0.07, 0.18]
+          "radius": 0.014
+        - "center": [0.0, -0.07, 0.18]
+          "radius": 0.014
+        - "center": [0.0, 0.07, 0.203]
+          "radius": 0.014
+        - "center": [0.0, -0.07, 0.203]
+          "radius": 0.014
+    left_lbr_link_0:
+        - "center": [0.0, 0.0, 0.11]
+          "radius": 0.105
+    left_lbr_link_1:
+        - "center": [0.0, -0.04, 0.2]
+          "radius": 0.08
+    left_lbr_link_2:
+        - "center": [0.0, 0.07, 0.0]
+          "radius": 0.075
+    left_lbr_link_3:
+        - "center": [0.0, 0.0, 0.0]
+          "radius": 0.08
+        - "center": [0.0, 0.045, 0.18]
+          "radius": 0.07
+    left_lbr_link_4:
+        - "center": [0.0, -0.06, 0.01]
+          "radius": 0.07
+    left_lbr_link_5:
+        - "center": [0.0, 0.0, 0.0]
+          "radius": 0.07
+    left_lbr_link_6:
+        - "center": [0.0, 0.03, 0.0]
+          "radius": 0.058
+        - "center": [0.0, 0.08, -0.02]
+          "radius": 0.063
+    left_lbr_link_7:
+        - "center": [0.0, 0.0, 0.01]
+          "radius": 0.045
+    left_robotiq_to_lbr_mount: 
+        - "center": [0.0, 0.0, 0.03]
+          "radius": 0.035
+    left_robotiq_link: 
+        - "center": [0.0, 0.04, 0.07]
+          "radius": 0.027
+        - "center": [0.0, -0.04, 0.07]
+          "radius": 0.027
+        - "center": [0.0, 0.07, 0.11]
+          "radius": 0.025
+        - "center": [0.0, -0.07, 0.11]
+          "radius": 0.025
+        - "center": [0.0, 0.09, 0.13]
+          "radius": 0.013
+        - "center": [0.0, -0.09, 0.13]
+          "radius": 0.013
+        - "center": [0.0, 0.07, 0.15]
+          "radius": 0.015
+        - "center": [0.0, -0.07, 0.15]
+          "radius": 0.015
+        - "center": [0.0, 0.07, 0.18]
+          "radius": 0.014
+        - "center": [0.0, -0.07, 0.18]
+          "radius": 0.014
+        - "center": [0.0, 0.07, 0.203]
+          "radius": 0.014
+        - "center": [0.0, -0.07, 0.203]
+          "radius": 0.014

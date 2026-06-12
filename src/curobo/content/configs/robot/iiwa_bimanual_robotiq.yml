@@ -1,0 +1,155 @@
+robot_cfg:
+  kinematics:
+    urdf_path: robot/iiwa_robotiq/urdf/iiwa_bimanual_robotiq_no_mimic.urdf
+    usd_path: robot/iiwa_robotiq/usd/iiwa_bimanual_robotiq.usd
+
+    # Robot frame setup
+    base_link: world
+    ee_link: left_grasp_link # TODO right arm
+    link_names: [left_robotiq_link, right_robotiq_link]
+    # Temporarily disabling right arm movement (controlling left arm only)
+    # NOTE: the right_* joint information was removed from the cspace section below
+    # (joint_names, retract_config, null_space_weight, cspace_distance_weight) since we are only using left arm
+    lock_joints: {
+      "right_lbr_A1": 0.0,
+      "right_lbr_A2": 0.0,
+      "right_lbr_A3": 0.0,
+      "right_lbr_A4": 0.0,
+      "right_lbr_A5": 0.0,
+      "right_lbr_A6": 0.0,
+      "right_lbr_A7": 0.0,
+    }
+
+    # Extra fixed link for attached object
+    extra_links:
+      attached_object:
+        link_name: attached_object
+        parent_link_name: left_robotiq_link
+        fixed_transform: [0, 0, 0, 1, 0, 0, 0]
+        joint_type: FIXED
+        joint_name: attach_joint
+
+
+    # Collision sphere configuration
+    collision_spheres: spheres/iiwa_bimanual_robotiq.yml
+    collision_sphere_buffer: 0.005
+    extra_collision_spheres:
+      attached_object: 10
+
+    # Collision links
+    collision_link_names:
+      - left_lbr_link_0
+      - left_lbr_link_1
+      - left_lbr_link_2
+      - left_lbr_link_3
+      - left_lbr_link_4
+      - left_lbr_link_5
+      - left_lbr_link_6
+      - left_lbr_link_7
+      - left_robotiq_to_lbr_mount
+      - left_robotiq_link
+
+      - right_lbr_link_0
+      - right_lbr_link_1
+      - right_lbr_link_2
+      - right_lbr_link_3
+      - right_lbr_link_4
+      - right_lbr_link_5
+      - right_lbr_link_6
+      - right_lbr_link_7
+      - right_robotiq_to_lbr_mount
+      - right_robotiq_link
+
+      - attached_object
+
+    # Self-collision ignore pairs
+    self_collision_ignore:
+      left_lbr_link_0: [left_lbr_link_1, left_lbr_link_2]
+      left_lbr_link_1: [left_lbr_link_2, left_lbr_link_3]
+      left_lbr_link_2: [left_lbr_link_3, left_lbr_link_4]
+      left_lbr_link_3: [left_lbr_link_4, left_lbr_link_5]
+      left_lbr_link_4: [left_lbr_link_5, left_lbr_link_6]
+      left_lbr_link_5: [left_lbr_link_6, left_lbr_link_7]
+      left_lbr_link_6: [left_lbr_link_7, left_robotiq_to_lbr_mount, left_robotiq_link]
+      left_lbr_link_7: [left_robotiq_to_lbr_mount, left_robotiq_link]
+      left_robotiq_to_lbr_mount: [left_robotiq_link]
+
+      right_lbr_link_0: [right_lbr_link_1, right_lbr_link_2]
+      right_lbr_link_1: [right_lbr_link_2, right_lbr_link_3]
+      right_lbr_link_2: [right_lbr_link_3, right_lbr_link_4]
+      right_lbr_link_3: [right_lbr_link_4, right_lbr_link_5]
+      right_lbr_link_4: [right_lbr_link_5, right_lbr_link_6]
+      right_lbr_link_5: [right_lbr_link_6, right_lbr_link_7]
+      right_lbr_link_6: [right_lbr_link_7, right_robotiq_to_lbr_mount, right_robotiq_link]
+      right_lbr_link_7: [right_robotiq_to_lbr_mount, right_robotiq_link]
+      right_robotiq_to_lbr_mount: [right_robotiq_link]
+
+    # Self-collision buffers
+    self_collision_buffer:
+      left_lbr_link_0: 0.0
+      left_lbr_link_1: 0.0
+      left_lbr_link_2: 0.0
+      left_lbr_link_3: 0.0
+      left_lbr_link_4: 0.0
+      left_lbr_link_5: 0.0
+      left_lbr_link_6: 0.0
+      left_lbr_link_7: 0.0
+      left_robotiq_to_lbr_mount: 0.02
+      left_robotiq_link: 0.04
+
+      right_lbr_link_0: 0.0
+      right_lbr_link_1: 0.0
+      right_lbr_link_2: 0.0
+      right_lbr_link_3: 0.0
+      right_lbr_link_4: 0.0
+      right_lbr_link_5: 0.0
+      right_lbr_link_6: 0.0
+      right_lbr_link_7: 0.0
+      right_robotiq_to_lbr_mount: 0.02
+      right_robotiq_link: 0.04
+
+      attached_object: 0.0
+
+    use_global_cumul: true
+
+    # Mesh links
+    mesh_link_names:
+      - left_lbr_link_0
+      - left_lbr_link_1
+      - left_lbr_link_2
+      - left_lbr_link_3
+      - left_lbr_link_4
+      - left_lbr_link_5
+      - left_lbr_link_6
+      - left_lbr_link_7
+      - left_robotiq_to_lbr_mount
+      - left_robotiq_link
+
+      - right_lbr_link_0
+      - right_lbr_link_1
+      - right_lbr_link_2
+      - right_lbr_link_3
+      - right_lbr_link_4
+      - right_lbr_link_5
+      - right_lbr_link_6
+      - right_lbr_link_7
+      - right_robotiq_to_lbr_mount
+      - right_robotiq_link
+    external_asset_path: null
+
+    # Configuration space
+    cspace:
+      joint_names:
+        - left_lbr_A1
+        - left_lbr_A2
+        - left_lbr_A3
+        - left_lbr_A4
+        - left_lbr_A5
+        - left_lbr_A6
+        - left_lbr_A7
+
+      retract_config: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+      null_space_weight: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+      cspace_distance_weight: [1.0, 0.9, 0.8, 0.8, 0.7, 0.6, 0.5]
+      max_jerk: 500.0
+      max_acceleration: 15.0
