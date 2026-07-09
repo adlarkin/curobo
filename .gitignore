@@ -192,10 +192,8 @@ docker/pkgs/*
 nvidia_curobo*/
 
 *.code-workspace
-*.usda
 *.pdf
 #*.png
-*.usd
 *.SLDPRT
 
 *tfevents*
